@@ -27,14 +27,12 @@
   }
   .page_slide{
     background: #A0413F;   
-    color: white;
     padding: 10px;
-    text-align: center;
   }
   .page_slide img{
     width: 100%;
   }
-  .about img {
+  .product img {
     opacity: 0.85;
     width: 100%;
   }
@@ -44,35 +42,21 @@
     text-align: center;
   }
 
-  .about p{
+  .product p{
     text-align: center;
     padding-top: 10px;
   }
-  .about #caption{
-    padding-top: 50px;
+  .product #caption{
     border-left: double;
     border-color: gray;
-  }
-
-  .about #caption img{
-    width: 10%;
+    width: 70%;
     display: block;
     margin-left: auto;
     margin-right: auto;
   }
 
-  #info img{
-    padding: 10px;
-  }
-
-  #members{
-    padding:20px; 
-  }
-  #members img, p{
-    padding: 10px;
-  }
-  #map{
-    width: 100%;
+  .product .flag{
+    width: 15%;
   }
 
   footer{
@@ -93,15 +77,15 @@
 
   <ul class="nav justify-content-center">
     <li class="nav-item">
-      <a class="nav-link" id="logo" href="Summit_Takao.html"><img src="logo_about.png"></a>
+      <a class="nav-link" id="logo" href="index.html"><img src="logo_about.png"></a>
     </li>
 
     <li class="nav-item">
-      <a class="nav-link" href="#">ABOUT</a>
+      <a class="nav-link" href="about.html">ABOUT</a>
     </li>
 
     <li class="nav-item">
-      <a class="nav-link" href="#">PRODUCT</a>
+      <a class="nav-link" href="product.html">PRODUCT</a>
     </li>
   </ul>
 
@@ -110,64 +94,35 @@
 <!-- full slide -->
 <div class="page_slide">
   <img src="slide1.jpg" alt="logo_name">
-  <caption>Happy  Tuesday</caption>
 </div>
 
-<div class="about">  
+<div class="product">  
   <hr>
-  <h1>About us</h1>
+  <h1>PRODUCTS</h1>
   <hr>
+
   <div class="row">
 
-    <div class="col-sm-8">
+    <div class="col-sm-4">
       <img src="logo_about.png">
     </div>
-    <div class="col-sm-4" id="caption">
-      <img src="flag.png">
-      <p>Good Coffee & Baked Goods</p>
-      <p>好咖啡，自製甜點麵包與鹹食</p>
-      <p>WIFI，插座 </p>
-      <p>禁帶外食，低消為每人一杯飲品</p>
-    </span>
+    <div class="col-sm-2" >
+      <p><img src="flag.png"  class="flag">Tart</p>
+      <img src="dessert1.jpg" id="caption">
     </div>
-
-  </div>
-
-</div>
-
-
-<!--information-->
-<hr>
-<h1>Information</h1>
-<hr>
-
-
-<div class="row">
-
-  <!--members-->
-  <div class="col-sm-6" id="members">
-    <div class="row">
-      <div class="col-sm-4">
-        <img src="spinner-of-dots.png">
-        <p>咖啡師，也是大家覺得很友善好聊的老闆。</p>
-        <p>經過幾些年與咖啡豆當好朋友，或許該試試他所提供的味道。</p>
-      </div>
-      <div class="col-sm-4">
-        <img src="spinner-of-dots _lightblue.png">
-        <p>店內有個高高的男生會從三樓工作室端著一盤盤剛出爐的什麼下來上架，山美的甜點由他獨立生產，樸實的外觀下總是自然的用料與細心調整後的味道。</p>
-      </div>
-      <div class="col-sm-4">
-        <img src="spinner-of-dots _orange.png">
-        <p>最近很會搜集一星評論的女生也是山美小編，長得臉不香，一邊替照片找光線發文，一邊照顧著山美的空間以及發想山美踏出的每一個步伐。</p>
-      </div>
+    <div class="col-sm-2" >
+      <p><img src="flag.png"  class="flag">Slice</p>
+      <img src="dessert2.jpg" id="caption">
     </div>
-  </div>
+    <div class="col-sm-2">
+      <p><img src="flag.png"  class="flag">Recommand</p>
+      <img src="dessert3.jpg" id="caption">
+    </div>
+    <div class="col-sm-2" >
+      <p><img src="flag.png"  class="flag">Special</p>
+      <img src="dessert4.jpg" id="caption">
+    </div>    
 
-  <!--shop info-->
-  <div class="col-sm-6" id="info">
-    <p><img src="placeholder.png">高雄市鹽埕區大成街73號</p>
-    <p><img src="clock-with-white-face.png">12:00-19:00 //周三公休</p>
-    <p><img src="old-typical-phone.png">07-5216476</p>
   </div>
 
 </div>
@@ -176,7 +131,11 @@
 <hr>
 <footer class="page-footer font-small">
   <div class="row">
-    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+      <p><img src="placeholder.png">高雄市鹽埕區大成街73號</p>
+      <p><img src="clock-with-white-face.png">12:00-19:00 //周三公休</p>
+      <p><img src="old-typical-phone.png">07-5216476</p>
+    </div>
     <div class="col-sm-4">
       <p></p>
       <a href="https://www.facebook.com/summittakao/"><img src="instagram-logo.png"alt="instagram"></a>
@@ -187,7 +146,7 @@
 
   </div>
   <div class="footer-copyright text-center py-3">© 2018 Copyright:
-    <a href="#"> Shen Hui-Tzu</a>
+    <a href="https://github.com/ShenHueTzu/demo_website"> Shen Hui-Tzu</a>
   </div>
   <!-- Copyright -->
 </footer>
