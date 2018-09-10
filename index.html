@@ -33,11 +33,13 @@ $(function(){
       
     });
 });
+</script>
 
+<script>
 
 function myMap() {
   var myCenter = new google.maps.LatLng(22.6219518,120.2860267);
-  var mapCanvas = document.getElementById("map");
+  var mapCanvas = document.getElementById("myMap");
   var mapOptions = {center: myCenter, zoom: 5};
   var map = new google.maps.Map(mapCanvas, mapOptions);
   var marker = new google.maps.Marker({position:myCenter});
@@ -45,9 +47,9 @@ function myMap() {
 }
 </script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrOtEV6gSo8m6cnxCCVWOSxgcjW90jFkc"></script>
 
-</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuIUTCSuuCV0XsVqeNd2Ne0Py8rB7muZk&callback=myMap"></script>
+
 
 </head>
 
@@ -226,7 +228,7 @@ function myMap() {
     </div>
 
     <div class=" col-sm-3">
-      <div id="map"style="width:200px; height: 200px;"></div>
+      <div id="myMap"style="width:200px; height: 200px;"></div>
     </div>
 
   </div>
