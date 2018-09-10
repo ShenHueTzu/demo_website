@@ -33,6 +33,18 @@ $(function(){
       
     });
 });
+
+$(document).ready(function(){
+
+  $('.nav-link').hover(function(){
+    $(this).animate({fontSize:'2em'});
+  },
+  function(){
+    $(this).stop().animate({fontSize:'18px'},'slow');
+  });
+});
+
+
 </script>
 
 <script>

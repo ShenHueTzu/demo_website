@@ -12,11 +12,66 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});
+
+$(function(){
+    $('#to_the_top_btn').click(function(){
+        $('html,body').animate({scrollTop:0},'slow');
+    });
+
+
+    $(window).scroll(function(){
+      if ($(this).scrollTop()>400){
+        $('#to_the_top_btn').fadeIn();
+      } else{
+        $('#to_the_top_btn').fadeOut();
+      }
+      
+    });
+});
+
+
+$(document).ready(function(){
+
+  $('.nav-link').hover(function(){
+    $(this).animate({fontSize:'2em'});
+  },
+  function(){
+    $(this).stop().animate({fontSize:'18px'},'slow');
+  });
+});
+
+
+$(document).ready(function(){
+  $('#menu_text').click(function(){
+    $('#menu_div').toggle();
+  });
+
+});
+
+</script>
+
 </head>
 
 <style type="text/css">
   body{
     font-family: monospace, 微軟正黑體;
+  }
+
+  #to_the_top_btn{
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 18px;
+    color: white;
+    background: gray;
   }
 
   #logo img{
@@ -45,14 +100,17 @@
   padding:20px;
 } 
 
-  #menu{
+#menu_div{
+  display: hide;
+}
+#menu{
     padding-left: 25px;
     width: 80%;
     display: block; 
     margin-left: auto; 
     margin-right: auto; 
   }
-  #menu:hover {
+#menu:hover {
     -ms-transform: scale(1.5);
     transform: scale(1.5);
   }
@@ -77,10 +135,16 @@
     background-color:#A0413F ; 
     color: white;
   }
-  footer img{
+  .footer_img{
+    display:block; 
+    margin:auto;
     padding: 10px;
   }
-  #github:link {
+  .footer_img img{
+    padding: 10px;
+  }
+
+  #github{
     color: white;
   }
 
@@ -89,6 +153,9 @@
 
 
 <body>
+<!--To the top btn-->
+<button id="to_the_top_btn" title="GO to top">Top</button>
+
 <!--navbars-->	
 <div class="container">
 	  <!-- Links -->
@@ -156,10 +223,10 @@
 
 <!--food menu-->
 <hr>
-<h2>Menu</h2>
+<h2 id="menu_text"><a  href="about.html#menu_div">Menu</a></h2>
 <hr>
 
-<div class="row">
+<div class="row" id="menu_div">
 
   <div class="col-sm-6" >
     <h3><img src="piece-of-cake.png">Food</h3><img src="menu_food.jpg" id="menu">
@@ -227,8 +294,7 @@
 <hr>
 <footer class="page-footer font-small">
   <div class="row">
-    <div class="col-sm-4"></div>
-    <div class="col-sm-4">
+    <div class="footer_img">
       <p></p>
       <a href="https://www.instagram.com/summittakao/"><img src="instagram-logo.png"alt="instagram"></a>
       <a href="https://www.facebook.com/summittakao/"><img src="facebook-logo.png"alt="FB"></a>
@@ -243,12 +309,4 @@
   <!-- Copyright -->
 </footer>
 
-
-
-<script>
-$(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip();   
-});
-</script>
-</body>
 </html>
