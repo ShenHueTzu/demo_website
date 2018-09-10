@@ -12,11 +12,64 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});
+
+$(function(){
+    $('#to_the_top_btn').click(function(){
+        $('html,body').animate({scrollTop:0},'slow');
+    });
+
+
+    $(window).scroll(function(){
+      if ($(this).scrollTop()>400){
+        $('#to_the_top_btn').fadeIn();
+      } else{
+        $('#to_the_top_btn').fadeOut();
+      }
+      
+    });
+});
+
+
+function myMap() {
+  var myCenter = new google.maps.LatLng(22.6219518,120.2860267);
+  var mapCanvas = document.getElementById("map");
+  var mapOptions = {center: myCenter, zoom: 5};
+  var map = new google.maps.Map(mapCanvas, mapOptions);
+  var marker = new google.maps.Marker({position:myCenter});
+  marker.setMap(map);
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrOtEV6gSo8m6cnxCCVWOSxgcjW90jFkc=myMap"></script>
+
+</script>
+
 </head>
+
+
+
 
 <style type="text/css">
   body{
     font-family: monospace, 微軟正黑體;
+  }
+
+  #to_the_top_btn{
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 18px;
+    color: white;
+    background: gray;
   }
 
   .nav-link {
@@ -76,14 +129,27 @@
     background-color:#A0413F ; 
     color: white;
   }
-  footer img{
+  .footer_img{
+    display:block; 
+    margin:auto;
     padding: 10px;
+  }
+  .footer_img img{
+    padding: 10px;
+  }
+
+  #github{
+    color: white;
   }
 </style>
 
 
 
 <body>
+
+<!--To the top btn-->
+<button id="to_the_top_btn" title="GO to top">Top</button>
+
 <!--navbars-->	
 <div class="container">
 	  <!-- Links -->
@@ -134,7 +200,7 @@
 <div class="row">
 
   <!--members-->
-  <div class="col-sm-6" id="members">
+  <div class="col-sm-5" id="members">
     <div class="row">
       <div class="col-sm-4">
         <img src="spinner-of-dots.png">
@@ -153,10 +219,16 @@
   </div>
 
   <!--shop info-->
-  <div class="col-sm-6" id="info">
-    <p><img src="placeholder.png">高雄市鹽埕區大成街73號</p>
-    <p><img src="clock-with-white-face.png">12:00-19:00 //周三公休</p>
-    <p><img src="old-typical-phone.png">07-5216476</p>
+    <div class="col-sm-4" id="info">
+      <p><img src="placeholder.png">高雄市鹽埕區大成街73號</p>
+      <p><img src="clock-with-white-face.png">12:00-19:00 //周三公休</p>
+      <p><img src="old-typical-phone.png">07-5216476</p>
+    </div>
+
+    <div class=" col-sm-3">
+      <div id="map"style="width:200px; height: 200px;"></div>
+    </div>
+
   </div>
 
 </div>
@@ -165,8 +237,7 @@
 <hr>
 <footer class="page-footer font-small">
   <div class="row">
-    <div class="col-sm-4"></div>
-    <div class="col-sm-4">
+    <div class="footer_img">
       <p></p>
       <a href="https://www.instagram.com/summittakao/"><img src="instagram-logo.png"alt="instagram"></a>
       <a href="https://www.facebook.com/summittakao/"><img src="facebook-logo.png"alt="FB"></a>
@@ -176,17 +247,11 @@
 
   </div>
   <div class="footer-copyright text-center py-3">© 2018 Copyright:
-    <a href="https://github.com/ShenHueTzu/demo_website"> Shen Hui-Tzu</a>
+    <a href="https://github.com/ShenHueTzu/demo_website" id="github"> Shen Hui-Tzu</a>
   </div>
   <!-- Copyright -->
 </footer>
 
 
-
-<script>
-$(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip();   
-});
-</script>
 </body>
 </html>
